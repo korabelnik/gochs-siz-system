@@ -1,0 +1,52 @@
+﻿@model GochsSiz.Models.DisposalAct
+@{
+    ViewData["Title"] = "Создать акт";
+}
+
+<h2>Создание акта утилизации</h2>
+<form asp-action="Create">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label asp-for="ActNumber"></label>
+            <input asp-for="ActNumber" class="form-control" value="АКТ-СИЗ-@DateTime.Now.Year/@(Model.Id + 1)" />
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="DisposalDate"></label>
+            <input asp-for="DisposalDate" class="form-control" type="date" />
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="SizItemId">СИЗ для утилизации</label>
+            <select asp-for="SizItemId" class="form-select" asp-items="@(new SelectList(ViewBag.SizItems, "Id", "Name"))">
+                <option value="">— выберите —</option>
+            </select>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="DisposalMethod"></label>
+            <select asp-for="DisposalMethod" class="form-select">
+                <option>Сжигание</option>
+                <option>Захоронение</option>
+                <option>Передача специализированной организации</option>
+                <option>Дегазация и уничтожение</option>
+            </select>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="WasteClass"></label>
+            <select asp-for="WasteClass" class="form-select">
+                <option>I класс (чрезвычайно опасные)</option>
+                <option>II класс (высокоопасные)</option>
+                <option>III класс (умеренно опасные)</option>
+                <option>IV класс (малоопасные)</option>
+            </select>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="Contractor"></label>
+            <input asp-for="Contractor" class="form-control" placeholder="ООО «УтильСервис»" />
+        </div>
+        <div class="col-md-12 mb-3">
+            <label asp-for="Notes"></label>
+            <textarea asp-for="Notes" class="form-control"></textarea>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-danger">Создать акт</button>
+    <a asp-action="Index" class="btn btn-secondary">Отмена</a>
+</form>

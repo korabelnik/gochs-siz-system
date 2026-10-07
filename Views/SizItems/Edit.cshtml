@@ -1,0 +1,49 @@
+﻿@model GochsSiz.Models.SizItem
+@{
+    ViewData["Title"] = "Редактировать СИЗ";
+}
+
+<h2>Редактирование: @Model.Name</h2>
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label asp-for="ItemType"></label>
+            <input asp-for="ItemType" class="form-control" />
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="BatchNumber"></label>
+            <input asp-for="BatchNumber" class="form-control" />
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="ExpiryDate"></label>
+            <input asp-for="ExpiryDate" class="form-control" type="date" />
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="StorageLocation"></label>
+            <input asp-for="StorageLocation" class="form-control" />
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="Status"></label>
+            <select asp-for="Status" class="form-select">
+                <option>На складе</option>
+                <option>Выдано</option>
+                <option>Списано / Утилизировано</option>
+            </select>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="AssignedTo"></label>
+            <input asp-for="AssignedTo" class="form-control" />
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="InventoryNumber"></label>
+            <input asp-for="InventoryNumber" class="form-control" />
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+    <a asp-action="Index" class="btn btn-secondary">Отмена</a>
+</form>

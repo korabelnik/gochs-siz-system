@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Главная";
+}
+
+<div class="text-center mt-5">
+    <h1 class="display-4">Система учёта СИЗ ГО и ЧС</h1>
+    <p class="lead">Муниципальное бюджетное учреждение культуры «Городской музей»</p>
+    <hr />
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card p-4 shadow-sm">
+                <h3>Реестр СИЗ</h3>
+                <p>Учёт противогазов, аптечек, защитных костюмов</p>
+                <a asp-controller="SizItems" asp-action="Index" class="btn btn-primary">Открыть реестр</a>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card p-4 shadow-sm">
+                <h3>Утилизация СИЗ</h3>
+                <p>Акты списания, передача контрагентам</p>
+                <a asp-controller="DisposalActs" asp-action="Index" class="btn btn-danger">Открыть акты</a>
+            </div>
+        </div>
+    </div>
+</div>

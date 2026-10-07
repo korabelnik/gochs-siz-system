@@ -1,0 +1,58 @@
+﻿@model GochsSiz.Models.SizItem
+@{
+    ViewData["Title"] = "Добавить СИЗ";
+}
+
+<h2>Добавление СИЗ</h2>
+<hr />
+<form asp-action="Create">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label asp-for="ItemType" class="form-label"></label>
+            <select asp-for="ItemType" class="form-select">
+                <option value="Противогаз ГП-7">Противогаз ГП-7</option>
+                <option value="Аптечка АИ-2">Аптечка АИ-2</option>
+                <option value="Костюм Л-1">Костюм Л-1</option>
+                <option value="Респиратор">Респиратор</option>
+            </select>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" class="form-control" />
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="BatchNumber" class="form-label"></label>
+            <input asp-for="BatchNumber" class="form-control" />
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="Manufacturer" class="form-label"></label>
+            <input asp-for="Manufacturer" class="form-control" />
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="ManufactureDate" class="form-label"></label>
+            <input asp-for="ManufactureDate" class="form-control" type="date" />
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="ExpiryDate" class="form-label"></label>
+            <input asp-for="ExpiryDate" class="form-control" type="date" />
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="Size" class="form-label"></label>
+            <input asp-for="Size" class="form-control" />
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="StorageLocation" class="form-label"></label>
+            <input asp-for="StorageLocation" class="form-control" placeholder="Склад №1, стеллаж 3" />
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="InventoryNumber" class="form-label"></label>
+            <input asp-for="InventoryNumber" class="form-control" />
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="AssignedTo" class="form-label"></label>
+            <input asp-for="AssignedTo" class="form-control" />
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">Сохранить</button>
+    <a asp-action="Index" class="btn btn-secondary">Отмена</a>
+</form>

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<GochsSiz.Models.DisposalAct>
+@{
+    ViewData["Title"] = "Акты утилизации";
+}
+
+<h2>Акты утилизации СИЗ</h2>
+<p><a asp-action="Create" class="btn btn-danger">+ Создать акт утилизации</a></p>
+
+<table class="table table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>№ акта</th>
+            <th>СИЗ</th>
+            <th>Дата</th>
+            <th>Способ</th>
+            <th>Класс отходов</th>
+            <th>Контрагент</th>
+            <th>Действия</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var act in Model)
+        {
+            <tr>
+                <td>@act.ActNumber</td>
+                <td>@(act.SizItem?.Name ?? "—")</td>
+                <td>@act.DisposalDate.ToShortDateString()</td>
+                <td>@act.DisposalMethod</td>
+                <td>@act.WasteClass</td>
+                <td>@act.Contractor</td>
+                <td><a asp-action="Details" asp-route-id="@act.Id" class="btn btn-sm btn-info">👁</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

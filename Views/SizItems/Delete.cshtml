@@ -1,0 +1,22 @@
+﻿@model GochsSiz.Models.SizItem
+@{
+    ViewData["Title"] = "Удалить СИЗ";
+}
+
+<h2>Удаление СИЗ</h2>
+<h4>Вы уверены, что хотите удалить «@Model.Name»?</h4>
+<div>
+    <dl class="row">
+        <dt class="col-sm-3">Тип:</dt>
+        <dd class="col-sm-9">@Model.ItemType</dd>
+        <dt class="col-sm-3">Партия:</dt>
+        <dd class="col-sm-9">@Model.BatchNumber</dd>
+        <dt class="col-sm-3">Срок годности:</dt>
+        <dd class="col-sm-9">@Model.ExpiryDate.ToShortDateString()</dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Удалить</button>
+        <a asp-action="Index" class="btn btn-secondary">Отмена</a>
+    </form>
+</div>

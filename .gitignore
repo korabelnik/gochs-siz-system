@@ -1,0 +1,17 @@
+# Папки сборки
+bin/
+obj/
+
+# Файлы Visual Studio
+.vs/
+*.user
+*.suo
+
+# База данных SQLite (не грузим в Git)
+*.db
+
+# Логи
+*.log
+
+# Секреты
+appsettings.Development.json
